@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @* @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr"*@
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/assets/css/themify-icons.css" rel="stylesheet" />
+    <link href="~/assets/css/metisMenu.css" rel="stylesheet" />
+    <link href="~/assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/assets/css/slicknav.min.css" rel="stylesheet" />
+
+    <link href="~/assets/css/default-css.css" rel="stylesheet" />
+    <link href="~/assets/css/styles.css" rel="stylesheet" />
+    <link href="~/assets/css/responsive.css" rel="stylesheet" />
+    <script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body
+
+@RenderBody()
+<hr />
+
+<footer>
+    <div class="footer-area">
+        <p>© Copyright 2018. All right reserved. Template by <a href="https://facebook.com/wp/">Colorlib</a>.</p>
+    </div>
+</footer>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+
+</html>

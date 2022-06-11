@@ -1,0 +1,33 @@
+﻿
+
+@model List<CRUD_TEST.DB_RAHUL.Emp_Table>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table class="table table-bordered table img-responsive table-hover table-condensed">
+    <tr class="tr tr">
+        <th>Employee Id</th>
+        <th>Employee  Nmae</th>
+        <th>Employee Company Name</th>
+        <th>Employee Department name</th>
+        <th>Employee salary</th>
+        <th>Employee Mobile Number</th>
+        <th>Edit Employee Details</th>
+        <th>Delete Employee Details</th>
+    </tr>
+    @foreach (var r in Model)
+    {
+        <tr>
+            <td>@r.Emp_Id</td>
+            <td>@r.Emp_Name</td>
+            <td>@r.Emp_Comp_Name</td>
+            <td>@r.Emp_Dept_Name</td>
+            <td>@r.Emp_Sal</td>
+            <td>@r.Emp_Mob</td>
+            <td><a class="btn btn-primary" href="@Url.Action("Edit","Home",new {r.Emp_Id})">Update</a></td>
+            <td><a class="btn btn-danger" href="@Url.Action("Delete","Home",new {r.Emp_Id})">Delete</a></td>
+        </tr>
+    }
+</table>

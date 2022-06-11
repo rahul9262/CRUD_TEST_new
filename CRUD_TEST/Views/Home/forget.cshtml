@@ -1,0 +1,61 @@
+﻿@model CRUD_TEST.Models.UserModel
+@{
+    ViewBag.Title = "forget";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="assets/images/icon/logo2.png" />">
+<link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/assets/css/themify-icons.css" rel="stylesheet" />
+<link href="/assets/css/metisMenu.css" rel="stylesheet" />
+<link href="/assets/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="/assets/css/slicknav.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+
+
+<link href="/assets/css/typography.css" rel="stylesheet" />
+<link href="/assets/css/default-css.css" rel="stylesheet" />
+<link href="/assets/css/styles.css" rel="stylesheet" />
+<link href="/assets/css/responsive.css" rel="stylesheet" />
+<script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+<div class="login-area">
+    <div class="container">
+        <div class="login-box ptb--100">
+            @using (Html.BeginForm("forget", "Home", FormMethod.Post))
+            { 
+                <form>
+                    <div class="login-form-head">
+                        <h4>Forgot Password</h4>
+                        <p>Hey! Forgot Password Your Password ? Reset Now</p>
+                    </div>
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <label for="exampleInputEmail1">Email</label>
+                            @*<input type="email" id="exampleInputEmail1">*@
+                            @Html.TextBoxFor(m=>m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+                            <span>@TempData["EmailnotFound"]</span>
+                            <i class="ti-lock"></i>
+                        </div>
+                        <div class="submit-btn-area mt-5">
+                            <button id="form_submit" type="submit">Reset <i class="ti-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/owl.carousel.min.js"></script>
+<script src="/assets/js/metisMenu.min.js"></script>
+<script src="/assets/js/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/jquery.slicknav.min.js"></script>
+<script src="/assets/js/plugins.js"></script>
+<script src="/assets/js/scripts.js"></script>

@@ -1,0 +1,632 @@
+﻿
+
+@model List<CRUD_TEST.DB_RAHUL.Emp_Table>
+    @{ 
+        Layout = null;
+    }
+
+<table class="table table-bordered table img-responsive table-hover table-condensed">
+    <tr class="tr tr">
+        <th>Employee Id</th>
+        <th>Employee  Nmae</th>
+        <th>Employee Company Name</th>
+        <th>Employee Department name</th>
+        <th>Employee salary</th>
+        <th>Employee Mobile Number</th>
+        <th>Edit Employee Details</th>
+        <th>Delete Employee Details</th>
+    </tr>
+    @foreach (var r in Model)
+    {
+        <tr>
+            <td>@r.Emp_Id</td>
+            <td>@r.Emp_Name</td>
+            <td>@r.Emp_Comp_Name</td>
+            <td>@r.Emp_Dept_Name</td>
+            <td>@r.Emp_Sal</td>
+            <td>@r.Emp_Mob</td>
+            <td><a class="btn btn-primary" href="@Url.Action("Edit","Home",new {r.Emp_Id})">Update</a></td>
+            <td><a class="btn btn-danger" href="@Url.Action("Delete","Home",new {r.Emp_Id})">Delete</a></td>
+        </tr>
+    }
+<!--</table>
+<div class="main-content-inner">
+    <div class="row">-->
+        <!-- table primary start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead Primary</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-primary">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table primary end -->
+        <!-- table success start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead success</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-success">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table success end -->
+        <!-- table info start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead info</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-info">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table info end -->
+        <!-- table warning start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead warning</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-warning">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table warning end -->
+        <!-- table danger start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead danger</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-danger">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table danger end -->
+        <!-- table dark start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead dark</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-dark">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table dark end -->
+        <!-- table light start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead light</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-light">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table light end -->
+        <!-- table secondary start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Thead secondary</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-secondary">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- table secondary end -->
+        <!-- Contextual Classes start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Contextual Classes</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-dark text-center">
+                                <thead class="text-uppercase">
+                                    <tr class="table-active">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-primary">
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="table-success">
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="table-info">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="table-dark">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Contextual Classes end -->
+        <!-- Contextual Classes start -->
+        <!--<div class="col-lg-6 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Contextual Classes</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-dark text-center">
+                                <thead class="text-uppercase">
+                                    <tr class="table-active">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">date</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-primary">
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="bg-secondary">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="bg-success">
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="bg-danger">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="bg-warning">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="bg-info">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="bg-light">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                    <tr class="bg-dark text-white">
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td><i class="ti-trash"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- Contextual Classes end -->
+    <!--</div>
+</div>-->

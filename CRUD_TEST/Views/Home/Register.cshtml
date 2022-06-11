@@ -1,0 +1,157 @@
+﻿@model CRUD_TEST.Models.UserModel
+@{
+    ViewBag.Title = "Register";
+}
+@{
+    Layout = null;
+}
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/assets/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/assets/css/themify-icons.css" rel="stylesheet" />
+<link href="~/assets/css/metisMenu.css" rel="stylesheet" />
+<link href="~/assets/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/assets/css/slicknav.min.css" rel="stylesheet" />
+
+<link href="~/assets/css/typography.css" rel="stylesheet" />
+<link href="~/assets/css/default-css.css" rel="stylesheet" />
+<link href="~/assets/css/styles.css" rel="stylesheet" />
+<link href="~/assets/css/responsive.css" rel="stylesheet" />
+<script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+<!-- preloader area end -->
+<!-- login area start -->
+<div class="login-area login-bg">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-xl-4 offset-xl-8 col-lg-6 offset-lg-6">
+                <div class="login-box-s2 ptb--100">
+
+                    @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+                    {
+
+                        @Html.HiddenFor(m => m.ForgetPassword)
+                        @Html.HiddenFor(m => m.Userid)
+
+                        <form>
+                            <div class="login-form-head">
+                                <h4>Sign up</h4>
+                                <p>Hello there, Sign up and Join with Us</p>
+                            </div>
+                            <div class="login-form-body">
+                                @if (ViewBag.forget != "Forget")
+                                {
+                                    <div>
+                                        <div class="form-gp">
+                                            <!--<label for="exampleInputName1">user Id</label>-->
+                                            @*   <input type="text" id="exampleInputName1">*@
+                                            <!--@Html.TextBoxFor(m => m.Userid, "", new { })
+                            @Html.ValidationMessageFor(m => m.Userid, "", new { @class = "error" })
+                            <i class="ti-user"></i>
+                            <div class="text-danger"></div>-->
+                                        </div>
+
+                                        <div class="form-gp">
+                                            <label for="exampleInputName1">Full Name</label>
+                                            @*   <input type="text" id="exampleInputName1">*@
+                                            @Html.TextBoxFor(m => m.Name, "", new { })
+                                            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "error" })
+                                            <i class="ti-user"></i>
+                                            <div class="text-danger"></div>
+                                        </div>
+                                    </div>
+                                }
+                                <div class="form-gp">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    @*<input type="email" id="exampleInputEmail1">*@
+                                    @Html.TextBoxFor(m => m.Email, "", new { })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+                                    <i class="ti-email"></i>
+                                    <div class="text-danger"></div>
+                                </div>
+                                @if (ViewBag.forget != "Forget")
+                                {
+
+
+                                    <div class="form-gp">
+                                        <label for="exampleInputPassword1">Mobile</label>
+                                        @*   <input type="password" id="exampleInputPassword1">*@
+                                        @Html.TextBoxFor(m => m.MobIle, "", new { })
+                                        @Html.ValidationMessageFor(m => m.MobIle, "", new { @class = "error" })
+                                        <i class="ti-lock"></i>
+                                        <div class="text-danger"></div>
+                                    </div>
+                                }
+                                <div class="form-gp">
+                                    <label for="exampleInputPassword2">Confirm Password</label>
+                                    @*  <input type="password" id="exampleInputPassword2">*@
+                                    @Html.TextBoxFor(m => m.Password, "", new { })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })
+                                    <i class="ti-lock"></i>
+                                    <div class="text-danger"></div>
+                                </div>
+                                <div class="submit-btn-area">
+                                    <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                                    <div class="login-other row mt-4">
+                                        <div class="col-6">
+                                            <a class="fb-login" href="#">Sign up with <i class="fa fa-facebook"></i></a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a class="google-login" href="#">Sign up with <i class="fa fa-google"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-footer text-center mt-5">
+                                    <p class="text-muted">Don't have an account? <a href="@Url.Action("Login", "Home")">Sign in</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="~/assets/js/popper.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/metisMenu.min.js"></script>
+<script src="~/assets/js/jquery.slimscroll.min.js"></script>
+<script src="~/assets/js/jquery.slicknav.min.js"></script>
+<script src="~/assets/js/plugins.js"></script>
+<script src="~/assets/js/scripts.js"></script>
+
+@*
+    <div class="rk">
+        <div>
+            <lable class="form-control">User Id</lable>
+            @Html.TextBoxFor(m => m.Userid, "", new { @class = "Form-control", @placeholder = "Enter your User Id." })
+            @Html.ValidationMessageFor(m => m.Userid, "", new { @class = "error" })
+        </div>
+        <div>
+            <lable class="form-control">Name </lable>
+            @Html.TextBoxFor(m => m.Name, "", new { @class = "Form-control", @placeholder = "Enter your Name ." })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "error" })
+        </div>
+        <div>
+            <lable class="form-control">Email Id</lable>
+            @Html.TextBoxFor(m => m.Email, "", new { @class = "Form-control", @placeholder = "Enter your Email Id." })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+        </div>
+        <div>
+            <lable class="form-control">Password </lable>
+            @Html.TextBoxFor(m => m.Password, "", new { @class = "Form-control", @placeholder = "Enter your Password ." })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Register</button>
+        <br />
+
+
+        <button type="reset" class="btn btn-warning">Reset</button>
+    </div>*@
